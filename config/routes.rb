@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
+  
   root 'general#home'
   
   ##### GENERAL PAGES #####
-  get 'general/home'
-  get 'general/help'
-  get 'general/about'
-  get 'general/contact'
+  get  '/help', to: 'general#help'
+  #help_path -> '/help'
+  #help_url  -> 'http://www.example.com/help'
+  get  '/about', to: 'general#about'
+  get  '/contact', to: 'general#contact'
   #########################
+  
+  ##### USERS PAGES #####
+  get  '/signup', to: 'users#new'
+  #######################
   
 end
