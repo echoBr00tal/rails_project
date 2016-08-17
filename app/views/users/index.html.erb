@@ -1,0 +1,29 @@
+<% provide(:title, "Current Users") %>
+
+<div class="center jumbotron">
+  
+  <h1>Users</h1>
+  
+  <table border="1">
+    
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Date Created</td>
+      </tr>  
+    </thead>
+    
+    <tbody>
+      <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to(user.name, user) %></td>
+        <td><%= user.email %></td>
+        <td><%= user.created_at %></td>
+      </tr>
+      <% end %>
+    </tbody>
+    
+  </table>
+  
+</div>
